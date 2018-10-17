@@ -9,5 +9,23 @@ module.exports = appInfo => {
   // add your config here
   config.middleware = []
 
+  // ! cors for dev
+  config.security = {
+    domainWhiteList: ['*'],
+    methodnoallow: {
+      enable: false,
+    },
+    xframe: {
+      enable: false,
+    },
+    csrf: {
+      enable: false,
+      ignoreJSON: false,
+    }
+  }
+  config.cors = {
+    credentials: true
+  }
+
   return config
 }
